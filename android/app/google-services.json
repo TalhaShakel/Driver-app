@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "189309535442",
+    "firebase_url": "https://oasis-app-delivery-default-rtdb.firebaseio.com",
+    "project_id": "oasis-app-delivery",
+    "storage_bucket": "oasis-app-delivery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189309535442:android:f59bc71f4ff525d725990b",
+        "android_client_info": {
+          "package_name": "com.merhawigulwet.driversapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189309535442-669eunbso49o8ak71cs8rk7j4a88pnud.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqmZLa_noY1m3IC2m7IZnarzaKVBLV-jo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189309535442-669eunbso49o8ak71cs8rk7j4a88pnud.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
