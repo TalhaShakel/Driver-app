@@ -43,7 +43,10 @@ class _HomeTabPageState extends State<HomeTabPage> {
     }
   }
 
-  locateDriverPosition() async {
+  Future locateDriverPosition() async {
+    LocationPermission permission;
+    permission = await Geolocator.requestPermission();
+    print(permission. toString() + "permission1");
     Position cPosition = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
     driverCurrentPosition = cPosition;

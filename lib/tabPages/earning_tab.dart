@@ -17,7 +17,6 @@ class _EarningTabPageState extends State<EarningTabPage> {
       color: Colors.white,
       child: Column(
         children: [
-
           //earnings
           Container(
             color: Colors.white,
@@ -33,11 +32,13 @@ class _EarningTabPageState extends State<EarningTabPage> {
                       fontSize: 16,
                     ),
                   ),
-
-              const SizedBox(height: 10,),
-
-                 Text(
-                   "\$ " + Provider.of<AppInfo>(context, listen: false).driverTotalEarnings,
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "\$ " +
+                        Provider.of<AppInfo>(context, listen: false)
+                            .driverTotalEarnings,
                     style: const TextStyle(
                       color: Colors.black,
                       fontSize: 35,
@@ -51,48 +52,51 @@ class _EarningTabPageState extends State<EarningTabPage> {
 
           //total number of trips
           ElevatedButton(
-              onPressed: ()
-              {
-                Navigator.push(context, MaterialPageRoute(builder: (c)=> TripsHistoryScreen()));
-              },
-              style: ElevatedButton.styleFrom(
-                primary: Colors.white54,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
-                child: Row(
-                  children: [
-                    Image.asset(
-                      "images/car_logo.png",
-                      width: 100,
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (c) => TripsHistoryScreen()));
+            },
+            style: ElevatedButton.styleFrom(
+              primary: Colors.white54,
+            ),
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+              child: Row(
+                children: [
+                  Image.asset(
+                    "images/car_logo.png",
+                    width: 100,
+                  ),
+                  const SizedBox(
+                    width: 6,
+                  ),
+                  const Text(
+                    "Trips Completed ",
+                    style: TextStyle(
+                      color: Colors.black,
                     ),
-                    const SizedBox(width: 6,),
-
-                    const Text(
-                      "Trips Completed ",
-                      style: TextStyle(
-                        color: Colors.black,
-                      ),
-                    ),
-
-                    Expanded(
-                      child: Container(
-                        child: Text(
-                          Provider.of<AppInfo>(context, listen: false).allTripsHistoryInformationList.length.toString(),
-                          textAlign: TextAlign.end,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      child: Text(
+                        Provider.of<AppInfo>(context, listen: false)
+                            .allTripsHistoryInformationList
+                            .length
+                            .toString(),
+                        textAlign: TextAlign.end,
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
+            ),
           ),
-
         ],
       ),
     );

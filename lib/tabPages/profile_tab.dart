@@ -1,6 +1,8 @@
+import 'package:drivers_app/controller.dart';
 import 'package:drivers_app/global/global.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
 import '../widgets/info_design_ui.dart';
 
@@ -12,11 +14,14 @@ class ProfileTabPage extends StatefulWidget {
 }
 
 class _ProfileTabPageState extends State<ProfileTabPage> {
+  var controller = Get.put(MainController());
+
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     print(onlineDriverData.phone);
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: theme.scaffoldBackgroundColor,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -24,8 +29,8 @@ class _ProfileTabPageState extends State<ProfileTabPage> {
             //name
             Text(
               onlineDriverData.name!,
-              style: const TextStyle(
-                color: Colors.white,
+              style: TextStyle(
+                color: theme.primaryColor,
                 fontSize: 50.0,
                 fontWeight: FontWeight.bold,
               ),
@@ -33,8 +38,8 @@ class _ProfileTabPageState extends State<ProfileTabPage> {
 
             Text(
               titleStarsRating + "driver",
-              style: const TextStyle(
-                color: Colors.white,
+              style: TextStyle(
+                color: theme.primaryColor,
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
               ),
@@ -87,12 +92,27 @@ class _ProfileTabPageState extends State<ProfileTabPage> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.redAccent,
                 ),
-                child: const Text(
+                child: Text(
                   "Logout",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: theme.primaryColor,
                   ),
                 )),
+
+            Obx(() => IconButton(
+
+                // tooltip: "asd",
+                onPressed: () {
+                  controller.changeTheme();
+                },
+                icon: Icon(
+                  controller.isDark.value ? Icons.light_mode : Icons.dark_mode,
+                  color: theme.iconTheme.color,
+                ))),
+            Text(
+              controller.isDark.value ? " Dark mode" : "Light mode",
+              style: TextStyle(color: theme.primaryColor),
+            )
           ],
         ),
       ),
