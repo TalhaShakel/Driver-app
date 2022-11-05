@@ -13,22 +13,24 @@ class EarningTabPage extends StatefulWidget {
 class _EarningTabPageState extends State<EarningTabPage> {
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+
     return Container(
-      color: Colors.white,
+      color: theme.scaffoldBackgroundColor,
       child: Column(
         children: [
           //earnings
           Container(
-            color: Colors.white,
+            color: theme.scaffoldBackgroundColor,
             width: double.infinity,
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 80),
               child: Column(
                 children: [
-                  const Text(
+                  Text(
                     "Your Earnings: ",
                     style: TextStyle(
-                      color: Colors.black,
+                      color: theme.primaryColor,
                       fontSize: 16,
                     ),
                   ),
@@ -39,8 +41,8 @@ class _EarningTabPageState extends State<EarningTabPage> {
                     "\$ " +
                         Provider.of<AppInfo>(context, listen: false)
                             .driverTotalEarnings,
-                    style: const TextStyle(
-                      color: Colors.black,
+                    style: TextStyle(
+                      color: theme.primaryColor,
                       fontSize: 35,
                       fontWeight: FontWeight.bold,
                     ),
@@ -71,10 +73,10 @@ class _EarningTabPageState extends State<EarningTabPage> {
                   const SizedBox(
                     width: 6,
                   ),
-                  const Text(
+                  Text(
                     "Trips Completed ",
                     style: TextStyle(
-                      color: Colors.black,
+                      color: theme.primaryColor,
                     ),
                   ),
                   Expanded(
@@ -85,10 +87,10 @@ class _EarningTabPageState extends State<EarningTabPage> {
                             .length
                             .toString(),
                         textAlign: TextAlign.end,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black,
+                          color: theme.primaryColor,
                         ),
                       ),
                     ),
