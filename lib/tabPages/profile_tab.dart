@@ -1,5 +1,7 @@
+import 'package:drivers_app/authentication/login_screen.dart';
 import 'package:drivers_app/controller.dart';
 import 'package:drivers_app/global/global.dart';
+import 'package:drivers_app/tabPages/support.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -87,7 +89,8 @@ class _ProfileTabPageState extends State<ProfileTabPage> {
             ElevatedButton(
                 onPressed: () {
                   fAuth.signOut();
-                  SystemNavigator.pop();
+                  Get.to(() => LoginScreen());
+                  // SystemNavigator.pop();
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.redAccent,
@@ -112,7 +115,12 @@ class _ProfileTabPageState extends State<ProfileTabPage> {
             Text(
               controller.isDark.value ? " Dark mode" : "Light mode",
               style: TextStyle(color: theme.primaryColor),
-            )
+            ),
+            TextButton(
+                onPressed: () {
+                  Get.to(() => support());
+                },
+                child: Text("Contact Support team"))
           ],
         ),
       ),
