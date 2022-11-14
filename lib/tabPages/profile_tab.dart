@@ -1,3 +1,4 @@
+import 'package:drivers_app/Support/chat.dart';
 import 'package:drivers_app/Support/support.dart';
 import 'package:drivers_app/authentication/login_screen.dart';
 import 'package:drivers_app/controller.dart';
@@ -123,8 +124,8 @@ class _ProfileTabPageState extends State<ProfileTabPage> {
 
               TextButton(
                   onPressed: () {
-                    Get.to(() => Support_page(
-                          email: onlineDriverData.email.toString(),
+                    Get.to(() => chatpage(email:"talha@gnmail.com" ,
+                        // email: onlineDriverData.email.toString(),
                         ));
                   },
                   child: Text("Contact Support team"))
