@@ -11,18 +11,18 @@ import 'package:velocity_x/velocity_x.dart';
 
 final messageDao = MessageDao();
 
-class chatpage extends StatefulWidget {
+class ChatScreen extends StatefulWidget {
   String email;
-  chatpage({required this.email});
+  ChatScreen({required this.email});
   @override
-  _chatpageState createState() => _chatpageState(email: email);
+  _ChatScreenState createState() => _ChatScreenState(email: email);
 }
 
-class _chatpageState extends State<chatpage> {
+class _ChatScreenState extends State<ChatScreen> {
   String email;
 
   var _scrollController;
-  _chatpageState({required this.email});
+  _ChatScreenState({required this.email});
 
   final fs = FirebaseFirestore.instance;
   final _auth = FirebaseAuth.instance;
@@ -39,8 +39,12 @@ class _chatpageState extends State<chatpage> {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Scaffold(
+      backgroundColor: theme.scaffoldBackgroundColor,
       appBar: AppBar(
+        // leading:,
+        // backgroundColor: theme.scaffoldBackgroundColor,
         title: "Support Chat".text.make(),
       ),
       body: SafeArea(
@@ -77,7 +81,7 @@ class _chatpageState extends State<chatpage> {
                             child: Text(
                               message.text.toString(),
                               style: TextStyle(
-                                color: Colors.white,
+                                color: theme.primaryColor,
                               ),
                             )),
                       ],

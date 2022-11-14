@@ -3,9 +3,7 @@ import 'package:drivers_app/Support/support.dart';
 import 'package:drivers_app/authentication/login_screen.dart';
 import 'package:drivers_app/controller.dart';
 import 'package:drivers_app/global/global.dart';
-import 'package:drivers_app/tabPages/support.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../widgets/info_design_ui.dart';
@@ -124,11 +122,12 @@ class _ProfileTabPageState extends State<ProfileTabPage> {
 
               TextButton(
                   onPressed: () {
-                    Get.to(() => chatpage(email:"talha@gnmail.com" ,
-                        // email: onlineDriverData.email.toString(),
-                        ));
+                    Get.to(() => ChatScreen(email: "email"));
                   },
-                  child: Text("Contact Support team"))
+                  child: Text(
+                    "Contact Support team",
+                    style: TextStyle(color: theme.primaryColor),
+                  ))
             ],
           ),
         ),
