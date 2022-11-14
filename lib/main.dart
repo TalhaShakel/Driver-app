@@ -3,6 +3,7 @@ import 'package:drivers_app/our_themes.dart';
 import 'package:drivers_app/splashScreen/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
@@ -14,6 +15,7 @@ void main() async {
       child: ChangeNotifierProvider(
         create: (context) => AppInfo(),
         child: GetMaterialApp(
+          builder: EasyLoading.init(),
           title: 'Drivers App',
           darkTheme: CustomThemes.darkTheme,
           theme: CustomThemes.lightTheme,

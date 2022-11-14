@@ -53,6 +53,7 @@ dependencies:
   smooth_star_rating_nsafe: ^1.0.0+1
   get: ^4.6.5
   velocity_x: ^3.6.0
+  flutter_easyloading: ^3.0.5
 
 dev_dependencies:
   flutter_test:
