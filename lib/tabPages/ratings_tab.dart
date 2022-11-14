@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_star_rating_nsafe/smooth_star_rating.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+
 
 import '../global/global.dart';
 
@@ -113,6 +115,21 @@ class _RatingsTabPageState extends State<RatingsTabPage> {
                 borderColor: Colors.green,
                 size: 46,
               ),
+              RatingBar.builder(
+   initialRating: 3,
+   minRating: 1,
+   direction: Axis.horizontal,
+   allowHalfRating: true,
+   itemCount: 5,
+   itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+   itemBuilder: (context, _) => Icon(
+     Icons.star,
+     color: Colors.amber,
+   ),
+   onRatingUpdate: (rating) {
+     print(rating);
+   },
+),
               const SizedBox(
                 height: 12.0,
               ),
