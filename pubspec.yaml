@@ -65,7 +65,7 @@ dev_dependencies:
     sdk: flutter
 
 flutter_icons:
-  image_path: "images/logo11.jpg" 
+  image_path: "images/logo3.png" 
   android: true
   ios: true
 
